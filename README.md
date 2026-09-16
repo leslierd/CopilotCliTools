@@ -16,6 +16,11 @@ GitHub Copilot CLI normally requires Node.js and npm to be installed on the mach
 - Outbound internet access (to download Node.js and the npm package)
 - A valid GitHub Copilot CLI authentication/token available to the process
 
+## Versions
+
+- **Node.js**: `22.23.0` (portable, pinned in the module)
+- **GitHub Copilot CLI**: latest `@github/copilot` version available on npm at install time (not pinned)
+
 ## Installation
 
 ```powershell
