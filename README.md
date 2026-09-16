@@ -70,8 +70,12 @@ Both install steps are idempotent — if Node.js or the Copilot CLI are already 
 
 Since everything installs into user-writable folders (`%USERPROFILE%\tools\node` and `%USERPROFILE%\npm`) and requires no elevation, this module works well inside Azure Automation Hybrid Runbook Worker jobs or other locked-down execution environments where you cannot install software system-wide.
 
+Create an Automation variable named `COPILOT_GITHUB_TOKEN` containing your GitHub Copilot token, then load it into the environment before invoking the CLI so it can be used for authentication:
+
 ```powershell
 Import-Module CopilotCliTools
+
+$env:COPILOT_GITHUB_TOKEN = Get-AutomationVariable -Name 'COPILOT_GITHUB_TOKEN'
 
 Invoke-CopilotCli -Prompt "Summarize the latest deployment logs" --allow-all
 ```
