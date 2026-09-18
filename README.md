@@ -79,11 +79,20 @@ Create an Automation variable named `COPILOT_GITHUB_TOKEN` containing your GitHu
 
 ```powershell
 Import-Module CopilotCliTools
+Install-Module CopilotCliTools
 
 $env:COPILOT_GITHUB_TOKEN = Get-AutomationVariable -Name 'COPILOT_GITHUB_TOKEN'
 
-Invoke-CopilotCli -Prompt "Summarize the latest deployment logs" --allow-all
+Invoke-CopilotCli -Prompt "Browse the internet for an interesting public API, make a call to it and display the result." --allow-all
 ```
+
+Example setup and output in Azure Automation:
+
+![Azure Automation runbook code example](images/Code.png)
+
+![Example Azure Automation output](images/Output-1.png)
+
+![Additional Azure Automation output](images/Output-2.png)
 
 ## License
 
